@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Avalonia.UI", "Av
 		{8BD8A2AA-D23A-4175-805E-BF7678325237} = {8BD8A2AA-D23A-4175-805E-BF7678325237}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Shared.ViewModels", "Portfolio.Shared.ViewModels\Portfolio.Shared.ViewModels.csproj", "{8BD8A2AA-D23A-4175-805E-BF7678325237}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Shared.ViewModels", "Shared\Portfolio.Shared.ViewModels\Portfolio.Shared.ViewModels.csproj", "{8BD8A2AA-D23A-4175-805E-BF7678325237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

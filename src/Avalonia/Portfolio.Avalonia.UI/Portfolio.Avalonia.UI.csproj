@@ -15,6 +15,6 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Portfolio.Shared.ViewModels\Portfolio.Shared.ViewModels.csproj" />
+    <ProjectReference Include="..\..\Shared\Portfolio.Shared.ViewModels\Portfolio.Shared.ViewModels.csproj" />
   </ItemGroup>
 </Project>

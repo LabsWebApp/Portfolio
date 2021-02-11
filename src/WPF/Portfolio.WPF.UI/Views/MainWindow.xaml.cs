@@ -1,14 +1,13 @@
-﻿using System.Windows;
-using Portfolio.Shared.ViewModels;
+﻿using Portfolio.Shared.ViewModels;
 
 namespace Portfolio.WPF.UI.Views
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     {
         public MainWindow()
         {
-            InitializeComponent();
             DataContext = new MainViewModel();
+            InitializeComponent();
         }
     }
 }

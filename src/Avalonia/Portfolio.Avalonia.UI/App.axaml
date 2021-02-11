@@ -2,7 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Portfolio.Avalonia.UI"
              x:Class="Portfolio.Avalonia.UI.App">
-  <Application.Styles>
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
         <FluentTheme Mode="Light"/>
     </Application.Styles>
 </Application>

@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Portfolio.Avalonia.UI.ViewModels;
 using Portfolio.Avalonia.UI.Views;
 using Portfolio.Shared.ViewModels;
 

@@ -1,15 +1,45 @@
-﻿<Window x:Class="Portfolio.WPF.UI.Views.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Portfolio.WPF.UI"
+        xmlns:viewModels="clr-namespace:Portfolio.Shared.ViewModels;assembly=Portfolio.Shared.ViewModels" 
+        x:Class="Portfolio.WPF.UI.Views.MainWindow"
         mc:Ignorable="d" 
         Height="450" Width="800" 
         Cursor="AppStarting" 
         WindowState="Maximized" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Title}">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
     <Grid>
-        <TextBlock Text ="{Binding MainDiskName}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox 
+            Text="{Binding CurrentPath}"/>
+        <ListBox Grid.Row="1" 
+                 ItemsSource="{Binding DirectoriesAndFiles}"
+                 SelectedItem ="{Binding SelectedFileEntity}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction 
+                        Command="{Binding OpenCommand}"
+                        CommandParameter="{Binding SelectedFileEntity}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBox Text="{Binding Name, Mode=OneWay}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
 
 namespace Portfolio.Shared.ViewModels.Base
@@ -10,19 +8,17 @@ namespace Portfolio.Shared.ViewModels.Base
         private readonly Action<object> _execute;
 
         public Command(Action<object> execute)
-        {
-            _execute = execute;
-        }
-        public bool CanExecute(object? parameter)
-        {
-            return true;
-        }
-
+            => _execute = execute;
+#nullable enable
+        public bool CanExecute(object? parameter) => true;
+#nullable disable
+#nullable enable
         public void Execute(object? parameter)
         {
-            _execute?.Invoke(parameter);
+            if (CanExecute(parameter))
+                _execute?.Invoke(parameter);
         }
-
-        public event EventHandler? CanExecuteChanged;
+#nullable disable
+        public event EventHandler CanExecuteChanged;
     }
 }

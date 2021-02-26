@@ -11,12 +11,37 @@ namespace Portfolio.Shared.ViewModels
     public class MainViewModel : BaseViewModel
     {
         #region Public Properties
-        public string CurrentPath { get; set; }
-        public string Title { get; private set; } 
-        public FileEntityViewModel SelectedFileEntity { get; set; }
 
-        public ObservableCollection<FileEntityViewModel>
-            DirectoriesAndFiles { get; set; } = new ObservableCollection<FileEntityViewModel>();
+        private string _currentPath;
+        public string CurrentPath 
+        { 
+            get => _currentPath;
+            set => set(ref _currentPath, value);
+        }
+
+        private string _title;
+        public string Title
+        {
+            get => _title;
+            set => set(ref _title, value);
+        }
+
+        private FileEntityViewModel _selectedFileEntity;
+
+        public FileEntityViewModel SelectedFileEntity
+        {
+            get => _selectedFileEntity;
+            set => set(ref _selectedFileEntity, value);
+        }
+
+        private ObservableCollection<FileEntityViewModel> 
+            _directoriesAndFiles = new();
+
+        public ObservableCollection<FileEntityViewModel> DirectoriesAndFiles
+        {
+            get => _directoriesAndFiles;
+            set => set(ref _directoriesAndFiles, value);
+        }
         #endregion
 
         #region Commands

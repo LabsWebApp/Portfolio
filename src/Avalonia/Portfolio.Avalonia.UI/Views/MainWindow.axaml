@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
         x:Class="Portfolio.Avalonia.UI.Views.MainWindow"
+
+        xmlns:i="using:Avalonia.Xaml.Interactivity"
+        xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
+
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Title="{Binding Title}">
 
     <Design.DataContext>
         <vm:MainViewModel/>
@@ -17,7 +22,24 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding CurrentPath}"/>
+        <TextBox Text="{Binding CurrentPath}"/>
+        <ListBox Grid.Row="1"
+                 Items="{Binding DirectoriesAndFiles}"
+                 SelectedItem="{Binding SelectedFileEntity}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="Transparent">
+                        <TextBlock Text="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
 
-    </Grid>
+            <i:Interaction.Behaviors>
+                <ia:EventTriggerBehavior EventName="DoubleTapped">
+                    <ia:InvokeCommandAction  Command="{Binding OpenCommand}"
+                                             CommandParameter="{Binding SelectedFileEntity}"/>
+                </ia:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+        </ListBox>
+     </Grid>
     </Window>

@@ -5,14 +5,4 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Core\**" />
-    <EmbeddedResource Remove="Core\**" />
-    <None Remove="Core\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="PropertyChanged.Fody" Version="3.3.1" />
-  </ItemGroup>
-
 </Project>

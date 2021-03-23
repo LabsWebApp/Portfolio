@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.WPF.UI", "WPF\Por
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Shared.ViewModels", "Shared\Portfolio.Shared.ViewModels\Portfolio.Shared.ViewModels.csproj", "{8BD8A2AA-D23A-4175-805E-BF7678325237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Avalonia.UI", "Avalonia\Portfolio.Avalonia.UI\Portfolio.Avalonia.UI.csproj", "{6322B5EF-0A68-4BF3-87B5-9DB1A9DAD940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Avalonia.UI", "Avalonia\Portfolio.Avalonia.UI\Portfolio.Avalonia.UI.csproj", "{6322B5EF-0A68-4BF3-87B5-9DB1A9DAD940}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8BD8A2AA-D23A-4175-805E-BF7678325237} = {8BD8A2AA-D23A-4175-805E-BF7678325237}
 	EndProjectSection
